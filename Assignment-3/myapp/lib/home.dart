@@ -152,6 +152,49 @@ class Home extends StatelessWidget {
                     Text('Flat and Heels \n stand a chance to get \n rewarded'),
                   ],
                 ),
+              ),
+
+              // Container 5
+              Container(
+                color: Colors.red[400],
+                width: 350,
+                height: 60,
+                margin: EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Trending Products \n Last Date 23/02/2022',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400, color: Colors.white),
+                    ),
+                    ElevatedButton(onPressed: () {}, child: Text('View all ->'))
+                  ],
+                ),
+              ),
+
+              // Container 6
+              Container(
+                width: 350,
+                color: Colors.white,
+                height: 160,
+                margin: EdgeInsets.only(top: 30, bottom: 150),
+                child: Column(
+                  children: [
+                    Image.network(
+                        'https://s3-alpha-sig.figma.com/img/f3ea/6b0e/b8c7849710cbe962e5c0069216c1d0ac?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Q2CvKVRn9DG7qqdc7BpHNPa~nirvdnGAJo33ihXeS-7ouSp0WgUpTRvSP1VEXtI~odc8IBPgumAAWzPRkWw1NQkBAIz1hAnFvhxQ1aZPAJlqMOZVK7wSavTIpZHlJQaVOeNAULOQDY5JCbQW4Z7oP2ryMYRqks1Lk6~ELAfzbXnsVS-Z9ThXBpSbvdjGjKu6jVdiScxtr-PGXM2o0GDHW96ukATeQ2c4Op4m2I55jbnSWpFvUo1gWZFI8~Unjgq16Qa6GsVVcMq8biflzXVxKivffL3WE4-p3IDylxX42aVEHZUkJiz4X1S3rgZg-YI7FDyG04hcXRaqvSlFBDvRHg__'),
+                    Column(
+                      children: [
+                        Text('New Arrival'),
+                      ],
+                    ),
+                    Text(
+                      'Summer 25 Collections',
+                      style: TextStyle(fontWeight: FontWeight.w300),
+                    ),
+                    ElevatedButton(onPressed: () {}, child: Text('View all'))
+                  ],
+                ),
               )
             ],
           ),

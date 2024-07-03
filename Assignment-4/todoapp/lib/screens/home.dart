@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/components/container.dart';
+import 'package:todoapp/screens/add.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -46,7 +47,13 @@ class HomePage extends StatelessWidget {
             Container(
                 margin: const EdgeInsets.only(top: 30, bottom: 40),
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AddTodo()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.yellow[700],
                         textStyle: const TextStyle(

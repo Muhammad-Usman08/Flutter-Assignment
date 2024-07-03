@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:todoapp/screens/todo.dart';
 
 class AddTodo extends StatefulWidget {
   const AddTodo({super.key});
@@ -19,6 +19,8 @@ class _AddTodoState extends State<AddTodo> {
     var description = descriptionController.text;
     print('title : $title');
     print('description : $description');
+    titleController.clear();
+    descriptionController.clear();
   }
 
   @override
@@ -40,7 +42,7 @@ class _AddTodoState extends State<AddTodo> {
               Container(
                 margin: const EdgeInsets.only(top: 30),
                 child: ClipOval(
-                  child: Image.network(
+                  child: Image.asset(
                     'assets/images/logo.jpeg',
                     width: 60.0,
                     height: 60.0,
@@ -102,19 +104,41 @@ class _AddTodoState extends State<AddTodo> {
             ),
           ),
 
-          Container(
-            margin: const EdgeInsets.only(top: 45),
-            width: 200,
-            height: 40,
-            child: ElevatedButton(
-                onPressed: () {
-                  addItem();
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green[400],
-                    textStyle: const TextStyle(
-                        fontWeight: FontWeight.w700, color: Colors.black)),
-                child: const Text('Add Todo')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 45),
+                width: 160,
+                height: 40,
+                child: ElevatedButton(
+                    onPressed: () {
+                      addItem();
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green[400],
+                        textStyle: const TextStyle(
+                            fontWeight: FontWeight.w700, color: Colors.black)),
+                    child: const Text('Add Todo')),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 45),
+                width: 160,
+                height: 40,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Todo()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green[400],
+                        textStyle: const TextStyle(
+                            fontWeight: FontWeight.w700, color: Colors.black)),
+                    child: const Text('Check Todo')),
+              ),
+            ],
           )
         ],
       ),

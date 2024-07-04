@@ -13,14 +13,26 @@ class _AddTodoState extends State<AddTodo> {
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
 
+  //list
+  List todos = [
+    {'title': '', 'description': ''}
+  ];
+
   //add todo
   addItem() {
-    var title = titleController.text;
-    var description = descriptionController.text;
-    print('title : $title');
-    print('description : $description');
-    titleController.clear();
-    descriptionController.clear();
+    if (titleController.text != '' || descriptionController != '') {
+      setState(() {
+        todos.add({
+          'title': '${titleController.text}',
+          'description': '${descriptionController.text}'
+        });
+        print(todos);
+        titleController.clear();
+        descriptionController.clear();
+      });
+    } else {
+      print('cannot be emptiyed');
+    }
   }
 
   @override
@@ -29,6 +41,18 @@ class _AddTodoState extends State<AddTodo> {
       backgroundColor: const Color(0xFF6b79c0),
       body: Column(
         children: [
+          // Container(
+          //   height: 200,
+          //   width: 400,
+          //   child: ListView.builder(
+          //       itemCount: item.length,
+          //       itemBuilder: (context, index) {
+          //         return ListTile(
+          //           title: Text('${item[index]['title']}'),
+          //           subtitle: Text('${item[index]['description']}'),
+          //         );
+          //       }),
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -129,7 +153,7 @@ class _AddTodoState extends State<AddTodo> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Todo()),
+                        MaterialPageRoute(builder: (context) => Todo()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -139,7 +163,7 @@ class _AddTodoState extends State<AddTodo> {
                     child: const Text('Check Todo')),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

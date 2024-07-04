@@ -3,7 +3,7 @@ import 'package:todoapp/components/task.dart';
 import 'package:todoapp/screens/add.dart';
 
 class Todo extends StatelessWidget {
-  const Todo({super.key});
+  Todo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class Todo extends StatelessWidget {
               margin: const EdgeInsets.only(top: 30),
               child: ListView.builder(
                   shrinkWrap: true,
-                  itemCount: 1,
+                  itemCount: 0,
                   itemBuilder: (context, index) {
                     return Container(
                       margin: const EdgeInsets.only(
@@ -114,8 +114,8 @@ class Todo extends StatelessWidget {
                           border: Border.all(style: BorderStyle.none),
                           borderRadius: BorderRadius.circular(20)),
                       child: ListTile(
-                          title: const Text('data'),
-                          subtitle: const Text('klsahdkal'),
+                          title: Text('asds'),
+                          subtitle: Text('asd'),
                           trailing: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.delete))),
@@ -123,6 +123,7 @@ class Todo extends StatelessWidget {
                   }),
             ),
 
+            //Adding Todo button
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

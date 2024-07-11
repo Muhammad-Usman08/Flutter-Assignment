@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Links extends StatelessWidget {
-  dynamic color;
-  dynamic icon;
-  Links({super.key, required this.color, required this.icon});
+  final dynamic color;
+  final dynamic icon;
+  const Links({super.key, required this.color, required this.icon});
 
   @override
   Widget build(BuildContext context) {

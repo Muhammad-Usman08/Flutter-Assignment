@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyTextFields extends StatelessWidget {
-  dynamic icon;
-  String hintText;
+  final dynamic icon;
+  final String hintText;
 
-  MyTextFields({
+  const MyTextFields({
     super.key,
     required this.hintText,
     required this.icon,

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class MyContainer extends StatelessWidget {
   final dynamic image;
-  const MyContainer({super.key , required this.image});
+  const MyContainer({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, top: 20 , bottom: 30),
+      margin: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 20),
       decoration: BoxDecoration(
           color: const Color(0xFF0F2F44),
           borderRadius: BorderRadius.circular(20)),
@@ -16,7 +16,9 @@ class MyContainer extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Image.asset('$image'),
+            child: Image.asset(
+              '$image',
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(left: 20, top: 20),

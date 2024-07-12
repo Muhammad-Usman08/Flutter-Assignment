@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/discover_screens.dart';
+// import 'package:myapp/screens/details.dart';
+import 'package:myapp/screens/wish_list.dart';
+// import 'package:myapp/screens/discover_screens.dart';
 // import 'package:myapp/screens/login.dart';
 
 void main() {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Property App',
-      home: DiscoverScreen(),
+      home: WishList(),
     );
   }
 }

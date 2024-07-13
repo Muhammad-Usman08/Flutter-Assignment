@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/components/links.dart';
 import 'package:myapp/components/textfields.dart';
+import './discover_screens.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,7 +11,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(top: 70),
+          margin: const EdgeInsets.only(top: 70, bottom: 50),
           child: Column(
             children: [
               Row(
@@ -23,7 +24,7 @@ class LoginPage extends StatelessWidget {
                   )),
                 ],
               ),
-          
+
               //Text
               Container(
                 margin: const EdgeInsets.only(top: 20),
@@ -32,24 +33,29 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                 ),
               ),
-          
+
               //TextFields
-              MyTextFields(
+              const MyTextFields(
                 hintText: 'Enter email',
-                icon: const Icon(Icons.email),
+                icon: Icon(Icons.email),
               ),
-          
+
               //Password TextField
-              MyTextFields(
+              const MyTextFields(
                 hintText: 'Enter password',
-                icon: const Icon(Icons.lock),
+                icon: Icon(Icons.lock),
               ),
-          
+
               //button
               Container(
                 margin: const EdgeInsets.only(top: 30, bottom: 35),
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const DiscoverScreen()));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF246bfd),
                       padding: const EdgeInsets.only(
@@ -63,7 +69,7 @@ class LoginPage extends StatelessWidget {
                           fontSize: 17),
                     )),
               ),
-          
+
               //Text
               Container(
                 margin: const EdgeInsets.only(bottom: 30),
@@ -73,18 +79,18 @@ class LoginPage extends StatelessWidget {
                       color: Color(0xFF246bfd), fontWeight: FontWeight.w600),
                 ),
               ),
-          
+
               //Links
               Container(
                 margin: const EdgeInsets.only(bottom: 30),
                 child: const Text(
                   'or Continue with',
-                  style:
-                      TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      color: Colors.grey, fontWeight: FontWeight.w600),
                 ),
               ),
-          
-              Row(
+
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Links(color: Colors.blue, icon: Icons.facebook),
@@ -92,14 +98,14 @@ class LoginPage extends StatelessWidget {
                   Links(color: Colors.black, icon: Icons.apple),
                 ],
               ), //Links end
-          
+
               Container(
                 margin: const EdgeInsets.only(top: 40, bottom: 10),
                 child: const Text('Dont have a account?'),
               ),
-          
+
               Container(
-                margin:const EdgeInsets.only(bottom: 20),
+                margin: const EdgeInsets.only(bottom: 20),
                 child: const Text(
                   'Sign Up',
                   style: TextStyle(

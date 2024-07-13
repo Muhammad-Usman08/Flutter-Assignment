@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/components/container.dart';
 import 'package:myapp/components/options.dart';
+import 'package:myapp/screens/details.dart';
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
@@ -10,7 +11,7 @@ class DiscoverScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(left: 20, right: 20),
+          margin: const EdgeInsets.only(left: 20, right: 20 , top: 30 , bottom: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,15 +32,21 @@ class DiscoverScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 20),
-                    padding: const EdgeInsets.only(
-                        top: 15, bottom: 15, left: 15, right: 15),
-                    child: Icon(Icons.assignment),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(12.0)),
-                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Details()));
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.only(
+                            top: 15, bottom: 15, left: 15, right: 15),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color:  Colors.grey[200]),
+                        child: const Icon(Icons.assignment)),
+                  )
                 ],
               ), //Header end
 

@@ -27,90 +27,145 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       // body Started
-      body: Column(
-        children: [
-          Container(
-            alignment: Alignment.centerRight,
-            margin: EdgeInsets.only(bottom: 30),
-            child: const Text(
-              '0',
-              style: TextStyle(
-                fontSize: 43,
-                color: Colors.white,
+      body: Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              alignment: Alignment.centerRight,
+              margin: const EdgeInsets.only(bottom: 30, right: 30),
+              child: const Text(
+                '0',
+                style: TextStyle(
+                  fontSize: 50,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
 
-          //Buttons
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MyButton(
-                number: 'C',
-              ),
-              MyButton(
-                number: '/',
-              ),
-              MyButton(
-                number: 'x',
-              ),
-              MyButton(
-                number: 'Del',
-              ),
-            ],
-          ),
-           const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MyButton(
-                number: '7',
-              ),
-              MyButton(
-                number: '8',
-              ),
-              MyButton(
-                number: '9',
-              ),
-              MyButton(
-                number: '-',
-              ),
-            ],
-          ),
-           const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MyButton(
-                number: '4',
-              ),
-              MyButton(
-                number: '5',
-              ),
-              MyButton(
-                number: '6',
-              ),
-              MyButton(
-                number: '+',
-              ),
-            ],
-          ),
-           const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MyButton(
-                number: '1',
-              ),
-              MyButton(
-                number: '2',
-              ),
-              MyButton(
-                number: '3',
-              ),
-              MyButton(
-                number: '=',
-              ),
-            ],
-          ),
-        ],
+            //Buttons
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MyButton(
+                  number: 'C',
+                  color: Colors.grey,
+                ),
+                MyButton(
+                  number: 'Del',
+                  color: Colors.grey,
+                ),
+                MyButton(
+                  number: '%',
+                  color: Colors.grey,
+                ),
+                MyButton(
+                  number: '/',
+                  color: Color(0xFFff9f0a),
+                ),
+              ],
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MyButton(
+                  number: '7',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '8',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '9',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: 'x',
+                  color: Color(0xFFff9f0a),
+                ),
+              ],
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MyButton(
+                  number: '4',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '5',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '6',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '-',
+                  color: Color(0xFFff9f0a),
+                ),
+              ],
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MyButton(
+                  number: '1',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '2',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '3',
+                  color: Color(0xFF333333),
+                ),
+                MyButton(
+                  number: '+',
+                  color: Color(0xFFff9f0a),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 8, top: 8),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF333333),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40)),
+                      // padding: const EdgeInsets.all(50),
+                      fixedSize: const Size(165, 75),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        '0',
+                        style: TextStyle(
+                          fontSize: 27,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const MyButton(
+                  number: '.',
+                  color: Color(0xFF333333),
+                ),
+                const MyButton(
+                  number: '=',
+                  color: Color(0xFFff9f0a),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
